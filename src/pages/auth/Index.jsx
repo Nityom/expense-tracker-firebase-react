@@ -3,6 +3,7 @@ import { signInWithPopup } from "firebase/auth";
 import { useNavigate, Navigate } from "react-router-dom";
 import { useGetUserInfo } from "../../hooks/useGetUserInfo";
 import "./style.css";
+import Sii from './Sii.svg'
 
 function Index() {
 
@@ -27,6 +28,7 @@ function Index() {
 
   return (
     <div className="login-page">
+      <img src={Sii} alt="" />
       <p>Sign In With Google to Continue</p>
       <button className="login-with-google-btn" onClick={signInWithGoogle}>
         {" "}

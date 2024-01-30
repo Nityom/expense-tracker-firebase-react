@@ -1,57 +1,360 @@
+/* Default styles for larger screens */
+body{
+  background-image: url(./patternpad.png), linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+  background-position: top left, center;
+  
+}
+
+.balance {
+  /* Add styles as needed */
+  font-size: 20px;
+  /* background-color: white; */
+  /* margin-top: 20px; */
+}
+
+.summary {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  margin-bottom: 40px;
+
+  /* justify-content: space-between; Aligns the children with space between them */
+}
+
+.income,
+.expenses {
+  font-size: 20px;
+  margin-top: 20px;
+   /* Add some spacing between the sections if needed */
+}
+
+/* Optional: Style each section individually if needed */
+.income h4,
+.expenses h4 {
+  margin-bottom: 5px;
+   /* Adjust as needed */
+}
+
+.income p,
+.expenses p {
+  margin: 0;
+   /* Remove default margin */
+}
+
+
 .expense-tracker {
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    color: #023047;
-  }
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #023047;
+
   
-  .expense-tracker h1 {
-    font-size: 40px;
+}
+
+.expense-tracker h1 {
+  font-size: 40px;
+}
+
+.expense-tracker button {
+  margin-left: 10px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 200px;
+}
+
+.profile-photo {
+  width: 200px;
+  border-radius: 50%;
+}
+
+.sign-out-button {
+  border: none;
+  margin-top: 50px;
+  width: 150px;
+  background-color: #7d2ae8;
+  background-image: linear-gradient(to bottom, #8220d2, #bf15e6);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.sign-out-button:hover {
+  background-color: #7d2ae8;
+  background-image: linear-gradient(to bottom, #571de8, #7723ec);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.transactions {
+  background-color: white;
+  margin-left: 430px;
+  margin-top: 20px;
+  padding-left: 10px;
+  width: 600px;
+  height: 400px;
+  overflow: auto;
+  border: 3px solid #023047;
+  border-radius: 10px;
+}
+
+.transactions h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.transactions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.transactions li {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.transactions li:last-child {
+  border-bottom: none;
+}
+
+.transactions h4 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.transactions p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.transactions label {
+  font-weight: bold;
+}
+
+
+
+
+#desc{
+  margin-right: 20px;
+  width: 200px;
+  height: 30px;
+  border: 2px solid black;
+
+
+}
+
+.button {
+  position: relative;
+  padding: 10px 22px;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  background-color: #7d2ae8;
+  transition: all 0.2s ease;
+}
+
+.button:active {
+  transform: scale(0.96);
+}
+
+.button:before,
+.button:after {
+  position: absolute;
+  content: "";
+  width: 150%;
+  left: 50%;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1000;
+  background-repeat: no-repeat;
+}
+
+.button:hover:before {
+  top: -70%;
+  background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+    10% 10%, 18% 18%;
+  background-position: 50% 120%;
+  animation: greentopBubbles 0.6s ease;
+}
+
+@keyframes greentopBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+      40% 90%, 55% 90%, 70% 90%;
   }
-  .expense-tracker button {
-    margin-left: 10px;
+
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+      50% 50%, 65% 20%, 90% 30%;
   }
-  .profile {
-    display: flex;
+
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+      50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+.button:hover::after {
+  bottom: -70%;
+  background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+    radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+  background-position: 50% 0%;
+  animation: greenbottomBubbles 0.6s ease;
+}
+
+@keyframes greenbottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+      70% -10%, 70% 0%;
+  }
+
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+      105% 0%;
+  }
+
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+      110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+/* Media queries for responsive design */
+
+/* For smaller screens (e.g., tablets) */
+@media (max-width: 768px) {
+  .expense-tracker {
     flex-direction: column;
-    align-items: center;
-    margin-left: 200px;
+    align-items: stretch;
+    text-align: center;
   }
-  .profile-photo {
-    width: 200px;
-    border-radius: 50%;
+
+  .profile {
+    margin-left: 0;
   }
-  
-  .sign-out-button {
-    border: none;
-    margin-top: 50px;
-    width: 150px;
-    background: #3498db;
-    background-image: linear-gradient(to bottom, #3498db, #2980b9);
-    border-radius: 10px;
-    color: #ffffff;
-    font-size: 22px;
-    font-weight: bold;
-    padding: 10px 20px 10px 20px;
-    text-decoration: none;
-  }
-  
-  .sign-out-button:hover {
-    background: #3cb0fd;
-  
-    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
+
   .transactions {
-    margin-left: 430px;
-    margin-top: 20px;
-    padding-left: 10px;
-    width: 600px;
-    height: 400px;
-    overflow: auto;
-    border: 3px solid #023047;
+    margin-left: 0;
   }
+}
+
+/* Radio Buttons  */
+
+.container form {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.container label {
+  display: flex;
+  flex-direction:row;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.375em;
+}
+
+.container  label input {
+  position: absolute;
+  left: -9999px;
+}
+
+.container label input:checked + span {
+  background-color: #414181;
+  color: white;
+}
+
+.container label input:checked + span:before {
+  box-shadow: inset 0 0 0 0.4375em #00005c;
+}
+
+.container label span {
+  display: flex;
+  align-items: center;
+  padding: 0.375em 0.75em 0.375em 0.375em;
+  border-radius: 99em;
+  transition: 0.25s ease;
+  color: #414181;
+}
+
+.container label span:hover {
+  background-color: #d6d6e5;
+}
+
+.container label span:before {
+  display: flex;
+  flex-shrink: 0;
+  content: "";
+  background-color: #fff;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  margin-right: 0.375em;
+  transition: 0.25s ease;
+  box-shadow: inset 0 0 0 0.125em #00005c;
+}
+
+
+
+
+
+
+/* For even smaller screens (e.g., mobile devices) */
+@media (max-width: 480px) {
+  .expense-tracker {
+    padding: 10px;
+  }
+  #desc{
+  /* margin-top: 10px; */
+  margin-left:20% ;
+margin-bottom:30px ;
+  }
+  .transactions{
+    width: 300px;
+ 
+    margin-left:7% ;
+  }
+
+
+  .profile {
+    order: -1; /* Move profile above the main content */
+  }
+}
+@media (min-width: 360px) {
+  .expense-tracker {
+    padding: 10px;
+  }
+
+}

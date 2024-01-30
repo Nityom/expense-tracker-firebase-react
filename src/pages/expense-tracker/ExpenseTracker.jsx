@@ -40,6 +40,8 @@ const { balance, income, expenses } = transactionTotals;
 
 
   };
+
+  
   return (
     <>
     <div className="expense-tracker">
@@ -59,45 +61,55 @@ const { balance, income, expenses } = transactionTotals;
             <p>${expenses}</p>
           </div>
         </div>
-        <form className="add-transaction" onSubmit={onSubmit}>
+        <form className="form" onSubmit={onSubmit}>
           <input
             type="text"
             placeholder="Description"
             value={description}
+            id='desc'
             required
             onChange={(e) => setDescription(e.target.value)}
           />
           <input
             type="number"
+            id='desc'
             placeholder="Amount"
             value={transactionAmount}
             required
             onChange={(e) => setTransactionAmount(e.target.value)}
           />
-          <input
+          <div className="container">
+            <form>
+              
+
+            
+          
+          <label htmlFor="expense"><input
             type="radio"
             id="expense"
             value="expense"
             checked={transactionType === "expense"}
             onChange={(e) => setTransactionType(e.target.value)}
-          />
-          <label htmlFor="expense"> Expense</label>
-          <input
+          /> <span>Expense</span> </label>
+         
+          <label htmlFor="income"> <input
             type="radio"
             id="income"
             value="income"
             checked={transactionType === "income"}
             onChange={(e) => setTransactionType(e.target.value)}
-          />
-          <label htmlFor="income"> Income</label>
+          /><span>Income</span> </label>
+        
+            </form>
+          </div>
 
-          <button type="submit"> Add Transaction</button>
+          <button type="submit" className='button'> Add Transaction</button>
         </form>
       </div>
       {profilePhoto && (
         <div className="profile">
           {" "}
-          <img className="profile-photo" src={profilePhoto} alt='profilephoto'/>
+          <img className="profile-photo" src={profilePhoto} alt='profileephoto'/>
           <button className="sign-out-button" onClick={signUserOut}>
             Sign Out
           </button>
